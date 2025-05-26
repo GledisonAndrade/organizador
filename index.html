@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Organizador</h1>
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-button">
+                    <span class="material-icons">brightness_4</span>
+                </button>
+                <button id="about-btn" class="icon-button">
+                    <span class="material-icons">info</span>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="habits-controls">
+                <div class="filter-controls">
+                    <select id="category-filter">
+                        <option value="all">Todas categorias</option>
+                        <option value="study">Estudo</option>
+                        <option value="reading">Leitura</option>
+                        <option value="tasks">Tarefas</option>
+                        <option value="reminders">Lembretes</option>
+                        <option value="fitness">Atividade Física</option>
+                        <option value="daily">Cotidianas</option>
+                    </select>
+                    <button id="sync-btn" class="btn">
+                        <span class="material-icons">sync</span> Sincronizar
+                    </button>
+                </div>
+                
+                <div class="add-habit">
+                    <input type="text" id="habit-input" placeholder="Adicione um novo hábito...">
+                    <select id="habit-category">
+                        <option value="study" style="color: #4285F4;">Estudo</option>
+                        <option value="reading" style="color: #EA4335;">Leitura</option>
+                        <option value="tasks" style="color: #FBBC05;">Tarefas</option>
+                        <option value="reminders" style="color: #34A853;">Lembretes</option>
+                        <option value="fitness" style="color: #673AB7;">Atividade Física</option>
+                        <option value="daily" style="color: #FF5722;">Cotidianas</option>
+                    </select>
+                    <button id="add-habit-btn" class="btn primary">
+                        <span class="material-icons">add</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="habits-list">
+                <h2>Seus Hábitos</h2>
+                <ul id="habits-container">
+                    <!-- Hábitos serão adicionados aqui dinamicamente -->
+                </ul>
+            </div>
+        </main>
+
+        <div id="about-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Sobre o Organizador</h2>
+                <p>Este aplicativo foi desenvolvido para ajudar você a organizar seus hábitos diários, incluindo estudos, leituras, tarefas, lembretes e atividades físicas.</p>
+                <p>Recursos:</p>
+                <ul>
+                    <li>Categorias coloridas para fácil identificação</li>
+                    <li>Sincronização com Google Agenda</li>
+                    <li>Temas claro e escuro</li>
+                    <li>Responsivo para desktop e mobile</li>
+                </ul>
+                <p class="creator">Criado por: Gledison Arruda Andrade</p>
+            </div>
+        </div>
+
+        <div id="auth-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Conectar ao Google Agenda</h2>
+                <p>Para sincronizar seus hábitos com o Google Agenda, faça login com sua conta Google.</p>
+                <button id="google-auth-btn" class="btn primary">
+                    <img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" alt="Google Logo" class="google-logo">
+                    Conectar com Google
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
